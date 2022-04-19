@@ -1,0 +1,62 @@
+name:                ginput
+version:             0.1.0.0
+github:              "nobsun/ginput"
+license:             BSD3
+author:              "Nobuo Yamashita"
+maintainer:          "nobsun@sampou.org"
+copyright:           "Copyright: (c) 2021 Nobuo Yamashita"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Experiment
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/nobsun/ginput#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- unicode-show
+- bytestring
+- utf8-string
+- text
+- time
+- exceptions
+- haskeline
+
+library:
+  source-dirs: src
+
+executables:
+  catn:
+    main:                catn/Main.hs
+    source-dirs:         app
+    dependencies:
+    - ginput
+
+  ginput:
+    main:                ginput/Main.hs
+    source-dirs:         app
+    dependencies:
+    - ginput
+
+tests:
+  ginput-test:
+    main:                spec.hs
+    source-dirs:         test
+    dependencies:
+    - ginput
+    - hspec
+    - main-tester
+
+  ginput-doctest:
+    main:                doctests.hs
+    source-dirs:         test
+    dependencies:
+    - ginput
+    - doctest
