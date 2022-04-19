@@ -1,5 +1,3 @@
-{-# LANGUAGE ImplicitParams #-}
-{-# LANGUAGE LambdaCase #-}
 module GhciInput
     ( ghciinput
     ) where
