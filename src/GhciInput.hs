@@ -2,6 +2,7 @@ module GhciInput
     ( ghciinput
     ) where
 
+import Control.Concurrent
 import Control.Monad.Catch
 import Control.Monad.IO.Class
 import Data.Char
@@ -27,7 +28,6 @@ ghciinput = runInputT defaultSettings
                                     -> liftIO (putStrLn ":e") >> loop
                                 | w `elem` [":l", ":load"]
                                     -> liftIO (putStrLn (unwords (":e" : ws)))
-                                       >> outputStrLn input
-                                       >> liftIO (putStrLn input)
+                                       >> liftIO (threadDelay 100000 >> putStrLn input)
                                        >> loop
                             _       -> liftIO (putStrLn input) >> loop
