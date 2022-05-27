@@ -10,7 +10,7 @@ import System.Console.Haskeline
 import System.IO
 
 ghciinput :: IO ()
-ghciinput = runInputT defaultSettings
+ghciinput = runInputT (defaultSettings { historyFile = Just "ghci.hist"})
           $ withInterrupt loop
    where
        loop :: InputT IO ()
