@@ -14,4 +14,4 @@ main = do
     }
 
 numbering :: String -> String
-numbering = unlines . zipWith (printf "%4d  %s") [1::Int ..] . lines
+numbering = unlines . zipWith (printf "%4d    %s") [1::Int ..] . lines
