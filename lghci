@@ -1,2 +1,0 @@
-#!/bin/bash
-ginput | tee -a -i ghci.log | stack exec -- ghci 2>&1 | tee -a -i ghci.log

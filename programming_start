@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+# script -a -f -c 'TERM=dumb bash' programming_session.log
+script -a -f -c bash programming_session.log

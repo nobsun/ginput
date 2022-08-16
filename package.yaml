@@ -26,8 +26,6 @@ dependencies:
 - utf8-string
 - text
 - time
-- exceptions
-- haskeline
 
 library:
   source-dirs: src
@@ -35,12 +33,6 @@ library:
 executables:
   catn:
     main:                catn/Main.hs
-    source-dirs:         app
-    dependencies:
-    - ginput
-
-  ginput:
-    main:                ginput/Main.hs
     source-dirs:         app
     dependencies:
     - ginput
